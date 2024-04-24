@@ -1,0 +1,45 @@
+
+stages:
+- stage: Dev
+  displayName: 'Dev'
+  jobs:
+  - job: ApplyConfigChangesDev
+    displayName: 'Apply Config Changes - Dev'
+    steps:
+    - script: |
+        # Add script to update ConfigMap for Dev environment
+        echo "Updating ConfigMap for Dev environment"
+      displayName: 'Update ConfigMap - Dev'
+
+- stage: Test
+  displayName: 'Test'
+  jobs:
+  - job: ApplyConfigChangesTest
+    displayName: 'Apply Config Changes - Test'
+    steps:
+    - script: |
+        # Add script to update ConfigMap for Test environment
+        echo "Updating ConfigMap for Test environment"
+      displayName: 'Update ConfigMap - Test'
+
+- stage: UAT
+  displayName: 'UAT'
+  jobs:
+  - job: ApplyConfigChangesUAT
+    displayName: 'Apply Config Changes - UAT'
+    steps:
+    - script: |
+        # Add script to update ConfigMap for UAT environment
+        echo "Updating ConfigMap for UAT environment"
+      displayName: 'Update ConfigMap - UAT'
+
+- stage: Prod
+  displayName: 'Prod'
+  jobs:
+  - job: ApplyConfigChangesProd
+    displayName: 'Apply Config Changes - Prod'
+    steps:
+    - script: |
+        # Add script to update ConfigMap for Prod environment
+        echo "Updating ConfigMap for Prod environment"
+      displayName: 'Update ConfigMap - Prod'
